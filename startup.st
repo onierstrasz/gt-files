@@ -1,5 +1,6 @@
 "Pharo script to initialize my environment when launching GT"
 LePageToolContentTreeElement showIncomingReferencesInlined.
+GtWorldElement allInstances first space extent: 2000 @ 1000.
 BlGlutinHostSpace zoomFactor: 1.2.
 ([ Smalltalk globals
 	at: #BaselineOfONHome
@@ -8,8 +9,7 @@ BlGlutinHostSpace zoomFactor: 1.2.
 			baseline: 'ONHome';
 			load.
 		#BaselineOfONHome asClass loadLepiter.
-		Smalltalk saveSession.
-		GtWorldElement allInstances first space extent: 2000 @ 1000 ] ] asAsyncFuture
+		Smalltalk saveSession ] ] asAsyncFuture
 	await: (AsyncFutureExecutionConfiguration new customGroup: #Lepiter))
 	then: [ IceGitCliPlatform current install.
 		IceGitCliPlatform current signCommits: true.
