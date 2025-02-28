@@ -61,6 +61,21 @@ ulimit -n 10240
 eof
 chmod 0755 "$run"
 
+# Generate a command file to debug GT
+debug="$gt/__debugGt.command"
+cat > "$debug" <<'eof'
+#! /bin/sh
+D=`dirname "$0"`
+cd "$D"
+ulimit -n 10240
+codesign --force --deep --sign - GlamorousToolkit.app
+lldb ./GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli
+exit
+# Then in lldb:
+run GlamorousToolkit.image --interactive
+eof
+chmod 0755 "$debug"
+
 # Generate an alias that will appear near the top of the current directory.
 # If you have lots of builds, delete the aliases you don't need.
 ln -s "$gt" "__$gt"
