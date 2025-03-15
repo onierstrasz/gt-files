@@ -11,6 +11,7 @@ do
 	if test -d "$arg"
 	then
 		cp "$F/startGt.command" "$arg/_startGt.command"
+		cp "$F/debugGT.command" "$arg/debugGT.command"
 		cp "$F/startup.st" "$arg"
 	fi
 done
