@@ -70,9 +70,8 @@ D=`dirname "$0"`
 cd "$D"
 ulimit -n 10240
 codesign --force --deep --sign - GlamorousToolkit.app
-echo "NB -- from lldb run this:"
-echo "run GlamorousToolkit.image --interactive"
-lldb ./GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli
+lldb ./GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli \
+	--one-line "run GlamorousToolkit.image --interactive"
 eof
 chmod 0755 "$debug"
 
@@ -91,3 +90,9 @@ echo zip -q -y -r "$gt.zip" "$gt"
 zip -q -y -r "$gt.zip" "$gt"
 
 exit
+
+# Open the image
+"$run"
+
+# Run the image in debug mode
+"$debug" 
