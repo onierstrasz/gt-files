@@ -1,6 +1,6 @@
 tweakUI := [ LePageToolContentTreeElement showIncomingReferencesInlined.
 	"GtWorldElement allInstances first space extent: 2000 @ 1200."
-	BlGlutinHostSpace zoomFactor: 1.2 ].
+	BlSpace userScale: 1.2 ].
 
 loadHome := [ Smalltalk globals
 		at: #BaselineOfONHome
