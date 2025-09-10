@@ -1,6 +1,7 @@
 tweakUI := [ LePageToolContentTreeElement showIncomingReferencesInlined.
 	"GtWorldElement allInstances first space extent: 2000 @ 1200."
-	BlSpace userScale: 1.2 ].
+	BlSpace userScale: 1.2.
+  GtPagerSettings useTreePager ].
 
 loadHome := [ Smalltalk globals
 		at: #BaselineOfONHome
