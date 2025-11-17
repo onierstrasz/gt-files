@@ -1,3 +1,5 @@
+| tweakUI loadHome loadExperiments useGitCLI |
+
 tweakUI := [ LePageToolContentTreeElement showIncomingReferencesInlined.
 	"GtWorldElement allInstances first space extent: 2000 @ 1200."
 	BlSpace userScale: 1.2.
