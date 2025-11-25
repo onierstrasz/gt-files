@@ -32,7 +32,7 @@ useGitCLI value.
 
 './pharo-local/iceberg/feenkcom' asFileReference exists
 	ifTrue: [ loadHome value.
-		loadExperiments value.
+		"loadExperiments value."
 		Smalltalk saveSession ]
 	ifFalse: [ ([ loadHome value.
 		loadExperiments value ] asAsyncFuture
